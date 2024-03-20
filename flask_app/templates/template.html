@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is a Template</title>
+</head>
+<body>
+    <h1>This is a Template!</h1>
+    <div>
+        <h2>Create your Placeholder!</h2>
+        <!-- In your form you need an action route (you will need to create this route in the server.py file) and a POST method -->
+        <form action="/create" method="POST">
+            <h5>Your Faux Data Here</h5>
+            <!-- This loop is generally aceeptable for all validations -->
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    {% for message in messages %}            <!-- loop through the messages -->
+                        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <label for="faux_data1">Faux Data 1:</label>
+            <!-- #input type NEEDS a name describer with the same name as your DB column -->
+            <input type="text" id="faux_data1" name="faux_data1">
+
+            <label for="faux_data2">Faux Data 2:</label>
+            <input type="text" id="faux_data2" name="faux_data2">
+
+            <label for="faux_data3">Faux Data 3:</label>
+            <input type="text" id="faux_data3" name="faux_data3">
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <a href="/all_placeholders">All Placeholders!</a>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Placeholders</title>
+</head>
+<body>
+    <div>
+        <h1>All Placeholders!</h1>
+        <table>
+            <thead>
+                <th scope="col">Faux Data 1:</th>
+                <th scope="col">Faux Data 2:</th>
+                <th scope="col">Faux Data 3:</th>
+            </thead>
+            <tbody>
+                <!-- JINJA!!! This is where we use PYTHON in our HTML! -->
+                <!-- Create a FOR loop that imitates the for loop in your .py file -->
+                <!-- This for loop iterates through each placeholder in placeholders -->
+                {% for placeholder in placeholders %}
+                <tr>
+                    <!-- Using the JINJA syntax we grab our data from the singular iteration with the data name we want  -->
+                    <td>{{placeholder.faux_data1}}</td>
+                    <td>{{placeholder.faux_data2}}</td>
+                    <td>{{placeholder.faux_data3}}</td>
+                </tr>
+                <!-- END YOUR LOOP!!!!!!!!!!! -->
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
